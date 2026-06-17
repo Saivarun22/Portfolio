@@ -1,21 +1,181 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Samudrala Sai Varun | Java Full Stack Developer</title>
-<link rel="stylesheet" href="style.css"></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samudrala Sai Varun - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
-<header><h1>Samudrala Sai Varun</h1><p>Java Full Stack Developer</p>
-<nav><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
-<a class="btn" href="assets/resume.pdf" download>Download Resume</a></nav></header>
-<section id="about"><h2>About Me</h2>
-<p>Java Full Stack Developer with internship experience in Spring Boot, MySQL, REST APIs, SQL analytics and dashboard reporting.</p></section>
-<section id="skills"><h2>Skills</h2>
-<ul><li>Java</li><li>Spring Boot</li><li>MySQL</li><li>REST APIs</li><li>HTML/CSS/JavaScript</li><li>Git/GitHub</li><li>Apache Superset</li></ul></section>
-<section id="projects"><h2>Projects</h2>
-<div class="card"><h3>Farmer Details</h3><p>Spring Boot CRUD application with MySQL.</p></div>
-<div class="card"><h3>Skill Hub</h3><p>Skill sharing platform using Java, Spring Boot, MySQL, HTML, CSS and JavaScript.</p></div></section>
-<section id="contact"><h2>Contact</h2>
-<p>Email: samudralasaivarun22@gmail.com</p>
-<p>Phone: +91 6305744900</p>
-</section>
-<footer>© 2026 Samudrala Sai Varun</footer>
-<script src="script.js"></script></body></html>
+
+    <!-- Navbar -->
+    <header>
+        <div class="logo">MyPortfolio</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Hi, I'm <span>Samudrala Sai Varun</span></h1>
+        <p>Java Full Stack Developer | Spring Boot | Backend Engineer</p>
+        <button onclick="scrollToSection('projects')">View Projects</button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+
+        <p>
+            I began my professional journey by developing a <b>Farmer Details Management System</b> as a full-stack project. 
+            In this project, I was involved in coding, database design, and implementing features for storing and managing farmer-related information. 
+            This helped me strengthen my skills in <b>programming, backend development, and problem-solving</b>.
+        </p>
+
+        <p>
+            After completing the project, I gained hands-on experience working with <b>databases and SQL queries</b>. 
+            I worked on data validation and testing, ensuring accuracy of production data and proper database integration across web and Android applications.
+        </p>
+
+        <p>
+            Later, I worked on <b>dashboard development and data visualization using Apache Superset</b>. 
+            I created datasets, wrote SQL queries, and built interactive dashboards for monitoring key metrics and analyzing ETL data workflows.
+        </p>
+
+        <p>
+            Through this journey, I developed a complete understanding of the workflow:
+            <b>development → database design → testing → data validation → dashboard visualization</b>.
+        </p>
+
+        <p>
+            I continue to improve my skills in <b>Java, SQL, data analytics, and BI tools</b> while preparing for IT industry roles.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+
+        <div class="skill">
+            <span>Java</span>
+            <div class="bar"><div class="fill" style="width: 90%"></div></div>
+        </div>
+
+        <div class="skill">
+            <span>Spring Boot</span>
+            <div class="bar"><div class="fill" style="width: 80%"></div></div>
+        </div>
+
+        <div class="skill">
+            <span>HTML / CSS</span>
+            <div class="bar"><div class="fill" style="width: 85%"></div></div>
+        </div>
+
+        <div class="skill">
+            <span>JavaScript</span>
+            <div class="bar"><div class="fill" style="width: 75%"></div></div>
+        </div>
+
+        <div class="skill">
+            <span>SQL</span>
+            <div class="bar"><div class="fill" style="width: 80%"></div></div>
+        </div>
+
+        <div class="skill">
+            <span>Postman</span>
+            <div class="bar"><div class="fill" style="width: 85%"></div></div>
+        </div>
+
+        <div class="skill">
+            <span>Swagger</span>
+            <div class="bar"><div class="fill" style="width: 80%"></div></div>
+        </div>
+
+        <div class="skill">
+            <span>VS Code</span>
+            <div class="bar"><div class="fill" style="width: 90%"></div></div>
+        </div>
+
+        <div class="skill">
+            <span>Apache Superset</span>
+            <div class="bar"><div class="fill" style="width: 70%"></div></div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <!-- Farmer Management System -->
+        <div class="card">
+            <h3>Farmer Management System</h3>
+            <p>
+                A full-stack application designed to manage farmer-related data efficiently and digitize agricultural records.
+            </p>
+            <p>
+                Worked on backend development, database design, API creation, and CRUD operations for farmer data management.
+            </p>
+            <p>
+                Performed testing on web and Android applications to ensure data accuracy and database synchronization.
+            </p>
+            <p>
+                <b>Tech Stack:</b> Java, SQL, Backend APIs, Database Management
+            </p>
+        </div>
+
+        <!-- Skill Hub -->
+        <div class="card">
+            <h3>Skill Hub</h3>
+            <p>
+                Skill Hub is a full-stack learning platform designed to track and manage technical skills and learning progress.
+            </p>
+            <p>
+                Contributed to frontend and backend development, building REST APIs and integrating them with the database.
+            </p>
+            <p>
+                Worked on SQL queries, database optimization, and structured learning module development.
+            </p>
+            <p>
+                <b>Tech Stack:</b> Java, Spring Boot, SQL, REST APIs, Full Stack Development
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+
+        <div class="contact-info">
+            <p><b>Name:</b> Samudrala Sai Varun</p>
+            <p><b>Email:</b> samudralasaivarun22@gmail.com</p>
+            <p>
+                <b>LinkedIn:</b>
+                <a href="https://www.linkedin.com/in/samudrala-saivarun-b4703027a/" target="_blank">
+                    View Profile
+                </a>
+            </p>
+        </div>
+
+        <form onsubmit="submitForm(event)">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Samudrala Sai Varun | Portfolio</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
