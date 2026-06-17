@@ -1,6 +1,8 @@
 
-// Smooth scroll for navigation
 
+// ===============================
+// Smooth scroll for navigation
+// ===============================
 document.querySelectorAll("nav a").forEach(link => {
     link.addEventListener("click", function (e) {
         e.preventDefault();
@@ -12,8 +14,9 @@ document.querySelectorAll("nav a").forEach(link => {
 });
 
 
+// ===============================
 // Typing Effect (Hero Section)
-
+// ===============================
 const text = "Java Full Stack Developer | Spring Boot | Backend Engineer";
 let index = 0;
 
@@ -27,7 +30,6 @@ function typeEffect() {
     }
 }
 
-// Reset and start typing
 window.addEventListener("load", () => {
     const heroText = document.querySelector(".hero p");
     if (heroText) heroText.innerHTML = "";
@@ -35,9 +37,9 @@ window.addEventListener("load", () => {
 });
 
 
-
+// ===============================
 // Active Nav Highlight on Scroll
-
+// ===============================
 window.addEventListener("scroll", () => {
     let sections = document.querySelectorAll("section");
     let navLinks = document.querySelectorAll("nav a");
@@ -46,15 +48,15 @@ window.addEventListener("scroll", () => {
 
     sections.forEach(section => {
         const sectionTop = section.offsetTop - 100;
-        const sectionHeight = section.clientHeight;
 
-        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+        if (window.scrollY >= sectionTop) {
             current = section.getAttribute("id");
         }
     });
 
     navLinks.forEach(link => {
         link.classList.remove("active");
+
         if (link.getAttribute("href").substring(1) === current) {
             link.classList.add("active");
         }
@@ -62,9 +64,9 @@ window.addEventListener("scroll", () => {
 });
 
 
-
-// Scroll reveal animation
-
+// ===============================
+// Scroll Reveal Animation
+// ===============================
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -81,8 +83,9 @@ document.querySelectorAll("section, .card, .skill").forEach(el => {
 });
 
 
+// ===============================
 // Contact Form Handling
-
+// ===============================
 function submitForm(event) {
     event.preventDefault();
 
@@ -97,4 +100,3 @@ function submitForm(event) {
         alert("Please fill all fields!");
     }
 }
-
