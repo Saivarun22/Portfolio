@@ -1,3 +1,8 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* ================= RESET ================= */
 * {
     margin: 0;
     padding: 0;
@@ -34,10 +39,16 @@ nav a {
     margin-left: 20px;
     text-decoration: none;
     transition: 0.3s;
+    padding-bottom: 3px;
 }
 
 nav a:hover {
     color: #38bdf8;
+}
+
+nav a.active {
+    color: #38bdf8;
+    border-bottom: 2px solid #38bdf8;
 }
 
 /* ================= HERO ================= */
@@ -51,6 +62,16 @@ nav a:hover {
     padding: 20px;
 }
 
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
 .hero span {
     color: #38bdf8;
 }
@@ -59,16 +80,16 @@ nav a:hover {
     margin-top: 20px;
     padding: 12px 25px;
     border: none;
-    background: #38bdf8;
+    background: linear-gradient(90deg, #38bdf8, #0ea5e9);
     color: black;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 6px;
+    border-radius: 8px;
     transition: 0.3s;
 }
 
 .hero button:hover {
-    background: #0ea5e9;
+    transform: scale(1.05);
 }
 
 /* ================= SECTIONS ================= */
@@ -95,9 +116,10 @@ section h2 {
 
 /* ================= SKILLS ================= */
 .skill {
-    margin: 15px auto;
+    margin: 18px auto;
     width: 60%;
     text-align: left;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .skill span {
@@ -122,18 +144,18 @@ section h2 {
 
 /* ================= PROJECT CARDS ================= */
 .card {
-    background: #1f2937;
-    padding: 20px;
-    margin: 15px auto;
+    background: linear-gradient(145deg, #1f2937, #111827);
+    padding: 25px;
+    margin: 20px auto;
     width: 70%;
-    border-radius: 12px;
+    border-radius: 15px;
     text-align: left;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(56, 189, 248, 0.25);
 }
 
 .card h3 {
@@ -147,8 +169,9 @@ section h2 {
     width: 60%;
     text-align: left;
     background: #1f2937;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 4px solid #38bdf8;
 }
 
 .contact-info p {
@@ -164,6 +187,7 @@ section h2 {
     text-decoration: underline;
 }
 
+/* ================= FORM ================= */
 form {
     display: flex;
     flex-direction: column;
@@ -186,15 +210,15 @@ textarea {
 button {
     padding: 12px;
     border: none;
-    background: #38bdf8;
+    background: linear-gradient(90deg, #38bdf8, #0ea5e9);
     cursor: pointer;
     font-weight: bold;
-    border-radius: 6px;
+    border-radius: 8px;
     transition: 0.3s;
 }
 
 button:hover {
-    background: #0ea5e9;
+    transform: scale(1.05);
 }
 
 /* ================= FOOTER ================= */
@@ -203,4 +227,16 @@ footer {
     padding: 20px;
     background: #111827;
     margin-top: 20px;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
