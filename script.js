@@ -1,144 +1,100 @@
-// Typing Effect
 
-const words = [
-    "Java Full Stack Developer",
-    "Spring Boot Developer",
-    "Backend Engineer",
-    "SQL Developer"
-];
+// Smooth scroll for navigation
 
-let i = 0;
-let j = 0;
-let current = "";
-let isDeleting = false;
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute("href").substring(1);
+        document.getElementById(targetId).scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+});
 
-function type() {
 
-    current = words[i];
+// Typing Effect (Hero Section)
 
-    if (!isDeleting) {
+const text = "Java Full Stack Developer | Spring Boot | Backend Engineer";
+let index = 0;
 
-        document.querySelector(".typing").textContent =
-            current.substring(0, j++);
+function typeEffect() {
+    const heroText = document.querySelector(".hero p");
 
-        if (j > current.length) {
-
-            isDeleting = true;
-
-            setTimeout(type, 1000);
-
-            return;
-
-        }
-
-    } else {
-
-        document.querySelector(".typing").textContent =
-            current.substring(0, j--);
-
-        if (j < 0) {
-
-            isDeleting = false;
-
-            i++;
-
-            if (i == words.length)
-                i = 0;
-
-        }
-
+    if (heroText && index < text.length) {
+        heroText.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 50);
     }
-
-    setTimeout(type, isDeleting ? 60 : 120);
-
 }
 
-type();
-
-
-// Scroll Reveal
-
-const observer = new IntersectionObserver(entries => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            entry.target.classList.add("show");
-
-        }
-
-    });
-
-});
-
-document.querySelectorAll("section").forEach(section => {
-
-    section.classList.add("hidden");
-
-    observer.observe(section);
-
+// Reset and start typing
+window.addEventListener("load", () => {
+    const heroText = document.querySelector(".hero p");
+    if (heroText) heroText.innerHTML = "";
+    typeEffect();
 });
 
 
-// Active Navigation
 
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav a");
+// Active Nav Highlight on Scroll
 
 window.addEventListener("scroll", () => {
+    let sections = document.querySelectorAll("section");
+    let navLinks = document.querySelectorAll("nav a");
 
     let current = "";
 
     sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.clientHeight;
 
-        const top = section.offsetTop - 150;
-
-        if (scrollY >= top) {
-
+        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
             current = section.getAttribute("id");
-
         }
-
     });
 
     navLinks.forEach(link => {
-
         link.classList.remove("active");
-
-        if (link.href.includes(current))
-
+        if (link.getAttribute("href").substring(1) === current) {
             link.classList.add("active");
-
+        }
     });
-
 });
 
 
-// Back To Top
 
-const btn = document.getElementById("topBtn");
+// Scroll reveal animation
 
-window.onscroll = () => {
-
-    if (document.documentElement.scrollTop > 300)
-
-        btn.style.display = "block";
-
-    else
-
-        btn.style.display = "none";
-
-};
-
-btn.onclick = () => {
-
-    window.scrollTo({
-
-        top: 0,
-
-        behavior: "smooth"
-
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
     });
+}, {
+    threshold: 0.1
+});
 
-};
+document.querySelectorAll("section, .card, .skill").forEach(el => {
+    el.classList.add("hidden");
+    observer.observe(el);
+});
+
+
+// Contact Form Handling
+
+function submitForm(event) {
+    event.preventDefault();
+
+    const name = event.target[0].value;
+    const email = event.target[1].value;
+    const message = event.target[2].value;
+
+    if (name && email && message) {
+        alert(`Thank you ${name}, your message has been sent successfully!`);
+        event.target.reset();
+    } else {
+        alert("Please fill all fields!");
+    }
+}
+
